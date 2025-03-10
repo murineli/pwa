@@ -13,13 +13,13 @@ body {
     flex-direction: column;
 }
 
-@media screen and(max-width: 800px) {
+@media(max-width: 800px) {
     body {
         background-color: blue;
     }
 }
 
-@media screen and(max-width: 500px) {
+@media(max-width: 500px) {
     body{
         background-color: orange;
     }
