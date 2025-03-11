@@ -51,7 +51,7 @@ if ('serviceWorker' in navigator && 'Notification' in window) {
                 .then(function(pushSubscription) {
                     console.log(JSON.stringify(pushSubscription));
                     // TODO Send to nodeJS
-                    fetch('http://127.0.0.1:7777/api/subs', {
+                    fetch('http://164.92.79.37/api/subs', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
