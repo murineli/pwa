@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:3000/api";
+const URL = "https://api-sse-pwa-orpin.vercel.app/api";
 const title = document.getElementById("title");
 const body = document.getElementById("body");
 
