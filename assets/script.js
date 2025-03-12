@@ -1,12 +1,11 @@
 const URL = "https://api-sse-pwa-orpin.vercel.app/api";
 const title = document.getElementById("title");
 const body = document.getElementById("body");
-
-console.log(window.screen);
-
 const hamburger = document.getElementsByClassName("hamburger");
 const menu = document.getElementsByClassName("menu")[0];
+
 menu.style.display = "none";
+
 hamburger[0].addEventListener("click", (e) => {
     e.preventDefault();
     if (window.innerWidth <= 800) {
@@ -14,7 +13,7 @@ hamburger[0].addEventListener("click", (e) => {
     }
 })
 
-window.addEventListener("resize", (e) => {
+window.addEventListener("resize", () => {
     if (window.innerWidth > 800) {
         menu.style.display = "none";
     }
@@ -23,7 +22,7 @@ window.addEventListener("resize", (e) => {
 async function getData() {
     try {
         const response = await fetch(URL);
-        return await response.json();;
+        return await response.json()
     } catch (e) {
         console.error(e);
     }
@@ -118,6 +117,7 @@ if ('serviceWorker' in navigator && 'Notification' in window) {
                 })
             .catch(function(err) {
                 console.log('Service worker error.')
+                console.log(err);
             })
         })
 

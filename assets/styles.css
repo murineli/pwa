@@ -1,13 +1,26 @@
+:root {
+    --sea-green: #075e54;
+    --surfice-green: #128c7e;
+    --mountain-meadow: #25d366;
+    --gossip: #dcf8c6;
+    --picton-blue: #34b7f1;
+    --pearl-bush: #ece5dd;
+}
+
+
 *, *:before, *:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 body {
     width: 100%;
     height: 100vh;
-    /*background: lightblue;*/
+    background: var(--pearl-bush);
 }
 
 header {
@@ -16,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 30px 20px;
     /*background: lightslategrey;*/
 }
 
@@ -44,6 +57,8 @@ a {
     color: gray;
 }
 
+
+
 main {
     width: 100%;
     /*height: 100vh;*/
@@ -62,8 +77,21 @@ section {
 }
 
 section:nth-child(odd) {
-    background-color: whitesmoke;
+    background-color: var(--gossip);
+}
 
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    color: #000;
+    background-color: var(--mountain-meadow);
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+    transition: 1s ease;
 }
 
 .container {
@@ -80,6 +108,22 @@ section:nth-child(odd) {
     height: 2px;
     background-color:gray;
 
+}
+
+.menu-search {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 15px;
 }
 
 .menu {
@@ -127,6 +171,7 @@ section:nth-child(odd) {
     justify-content: space-between;
     /*padding: 10px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #ffffff;
 
 }
 
@@ -141,7 +186,7 @@ section:nth-child(odd) {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: lightslategrey;
+    background-color: var(--picton-blue);
     padding: 10px;
     border-radius: 10px 10px 0 0;
 }
@@ -156,7 +201,6 @@ section:nth-child(odd) {
     height: 50px;
     display: flex;
     border-radius:0 0  10px 10px;
-    background-color: rgba(119, 136, 156, 0.2);
     padding: 10px;
     justify-content: end;
 }
@@ -166,13 +210,14 @@ button {
     padding: 5px;
     border: none;
     border-radius: 10px;
-    background-color: orange;
+    background-color: var(--mountain-meadow);
+
 }
 
 footer {
     width: 100%;
     height: 200px;
-    background: lightslategrey;
+    background-color: var(--sea-green);
 
 }
 
