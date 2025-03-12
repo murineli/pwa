@@ -2,6 +2,24 @@ const URL = "https://api-sse-pwa-orpin.vercel.app/api";
 const title = document.getElementById("title");
 const body = document.getElementById("body");
 
+console.log(window.screen);
+
+const hamburger = document.getElementsByClassName("hamburger");
+const menu = document.getElementsByClassName("menu")[0];
+menu.style.display = "none";
+hamburger[0].addEventListener("click", (e) => {
+    e.preventDefault();
+    if (window.innerWidth <= 800) {
+        menu.style.display = menu.style.display === "none" ? "flex" : "none";
+    }
+})
+
+window.addEventListener("resize", (e) => {
+    if (window.innerWidth > 800) {
+        menu.style.display = "none";
+    }
+})
+
 async function getData() {
     try {
         const response = await fetch(URL);
