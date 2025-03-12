@@ -1,3 +1,36 @@
+const URL = "http://127.0.0.1:3000/api";
+const title = document.getElementById("title");
+const body = document.getElementById("body");
+
+async function getData() {
+    try {
+        const response = await fetch(URL);
+        return await response.json();;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function main() {
+    try {
+        const page = await getData();
+
+        console.group('PageData');
+        console.log(page.data.title);
+        console.groupEnd();
+        title.innerText = page.data.title;
+        body.innerText = page.data.body;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+main();
+
+
+
+
+
 function urlBase64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)
@@ -80,6 +113,5 @@ if ('serviceWorker' in navigator && 'Notification' in window) {
     }
 
     console.log(navigator)
-
 
 }
